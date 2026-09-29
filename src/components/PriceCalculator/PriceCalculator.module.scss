@@ -1,0 +1,485 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.calculatorSection {
+  @include section-padding;
+  background: $bg-subtle;
+  position: relative;
+}
+
+.calcContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calcHeader {
+  text-align: center;
+  max-width: 760px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calcPill {
+  @include badge-pill;
+  background: $primary-soft;
+  color: $primary-dark;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.calcTitle {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: $navy;
+  line-height: 1.2;
+
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+.calcSubtitle {
+  font-size: 1rem;
+  color: $text-secondary;
+  line-height: 1.6;
+}
+
+.tabSwitcher {
+  display: flex;
+  background: #ffffff;
+  padding: 0.4rem;
+  border-radius: $radius-full;
+  border: 1px solid $border-default;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  box-shadow: $shadow-xs;
+
+  @include mobile {
+    flex-direction: column;
+    border-radius: $radius-md;
+  }
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 1.25rem;
+  border-radius: $radius-full;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $navy;
+  }
+
+  &.tabActive {
+    background: $navy;
+    color: #ffffff;
+    box-shadow: $shadow-xs;
+  }
+}
+
+/* Unit Price Comparator */
+.calcCardWrapper {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 1px solid $border-default;
+  border-radius: $radius-xl;
+  padding: 2.5rem;
+  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vsBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $bg-subtle;
+  border: 2px solid $border-default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  color: $text-muted;
+
+  @include mobile {
+    margin: 0 auto;
+  }
+}
+
+.productBox {
+  background: $bg-subtle;
+  border: 1.5px solid $border-default;
+  border-radius: $radius-md;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all $transition-fast;
+
+  &.winnerBox {
+    border-color: $primary;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2), $shadow-sm;
+  }
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionTag {
+  font-weight: 800;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $text-muted;
+}
+
+.bestDealBadge {
+  @include badge-pill;
+  background: $primary-soft;
+  color: $primary-dark;
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  font-size: 0.75rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border-radius: $radius-xs;
+    border: 1px solid $border-default;
+    font-size: 0.9375rem;
+    color: $navy;
+    font-family: inherit;
+    background: #ffffff;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0.75rem;
+}
+
+.inputGroupSmall {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+
+  select {
+    width: 100%;
+    padding: 0.6rem 0.65rem;
+    border-radius: $radius-xs;
+    border: 1px solid $border-default;
+    font-size: 0.875rem;
+    color: $navy;
+    background: #ffffff;
+    font-family: inherit;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+}
+
+.currencyInput {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid $border-default;
+  border-radius: $radius-xs;
+  overflow: hidden;
+
+  span {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-muted;
+    background: $bg-subtle;
+    border-right: 1px solid $border-default;
+  }
+
+  input {
+    border: none;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9375rem;
+    color: $navy;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.resultBox {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border: 1px solid $border-default;
+  border-radius: $radius-sm;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.resultLabel {
+  font-size: 0.6875rem;
+  color: $text-muted;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.resultValue {
+  font-size: 1.25rem;
+  color: $navy;
+  font-weight: 800;
+}
+
+.conclusionBanner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  border-radius: $radius-md;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.conclusionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-xs;
+  flex-shrink: 0;
+}
+
+.conclusionText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  strong {
+    font-size: 1.125rem;
+    color: $primary-darker;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    line-height: 1.5;
+  }
+}
+
+/* Savings Simulator */
+.savingsCardWrapper {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 1px solid $border-default;
+  border-radius: $radius-xl;
+  padding: 2.5rem;
+  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.savingsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sliderGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sliderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $navy;
+  }
+}
+
+.sliderValue {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: $primary-dark;
+}
+
+.rangeSlider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: $bg-subtle;
+  outline: none;
+  accent-color: $primary;
+  cursor: pointer;
+}
+
+.savingsResultsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.savingsResultCard {
+  background: $bg-subtle;
+  border: 1px solid $border-default;
+  border-radius: $radius-md;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    font-size: 0.8125rem;
+    color: $text-muted;
+    line-height: 1.4;
+    margin-top: auto;
+  }
+}
+
+.annualHighlight {
+  background: #fffbeb;
+  border-color: rgba(217, 119, 6, 0.3);
+  box-shadow: $shadow-sm;
+}
+
+.savingTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.savingTagGold {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #b45309;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.highlightGreen {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $primary;
+  line-height: 1;
+
+  small {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-muted;
+  }
+}
+
+.highlightGold {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #b45309;
+  line-height: 1;
+
+  small {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #92400e;
+  }
+}
+
+.highlightBlue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $status-info;
+  line-height: 1;
+
+  small {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-muted;
+  }
+}

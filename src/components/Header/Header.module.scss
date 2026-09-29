@@ -1,0 +1,274 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all $transition-smooth;
+}
+
+.topAnnouncement {
+  background: linear-gradient(90deg, #14532d 0%, #166534 50%, #15803d 100%);
+  color: #f0fdf4;
+  font-size: 0.8125rem;
+  padding: 0.45rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.announcementInner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.announcementBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.15rem 0.6rem;
+  border-radius: $radius-full;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+.announcementText {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.announcementLink {
+  color: #86efac;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 0.5rem;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all $transition-base;
+}
+
+.scrolled .navbar {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: $shadow-sm;
+  border-bottom-color: $border-default;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.25rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoIconWrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: $primary-soft;
+  border: 1px solid rgba(22, 163, 74, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: $navy;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.brandAccent {
+  color: $primary;
+}
+
+.brandSubtitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $text-muted;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+
+  @include up-to-tablet {
+    display: none;
+  }
+}
+
+.navLink {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $text-secondary;
+  position: relative;
+  transition: color $transition-fast;
+  padding: 0.25rem 0;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    border-radius: $radius-full;
+    transition: width $transition-base;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.webBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $text-secondary;
+  padding: 0.55rem 1rem;
+  border-radius: $radius-full;
+  border: 1px solid $border-default;
+  background: $bg-card;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $bg-subtle;
+    border-color: $border-medium;
+    color: $navy;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.primaryBtn {
+  @include button-primary;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: $navy;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: $radius-xs;
+
+  @include up-to-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobileDrawer {
+  display: none;
+
+  @include up-to-tablet {
+    display: block;
+    background: #ffffff;
+    border-bottom: 1px solid $border-default;
+    box-shadow: $shadow-lg;
+    padding: 1.5rem;
+    animation: slideUpFade 0.2s ease-out;
+  }
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileNavLink {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: $text-primary;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid $border-light;
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.mobileWebBtn {
+  @include button-secondary;
+  width: 100%;
+}
+
+.mobilePrimaryBtn {
+  @include button-primary;
+  width: 100%;
+}

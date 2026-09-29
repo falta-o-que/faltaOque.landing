@@ -1,0 +1,37 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-grad" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="20" y1="20" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#86EFAC"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="2" y="4" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#15803D" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Bag / Pantry Container -->
+  <g filter="url(#soft-shadow)">
+    <!-- Bag Handle -->
+    <path d="M22 19V14C22 8.47715 26.4772 4 32 4C37.5228 4 42 8.47715 42 14V19" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round"/>
+    
+    <!-- Bag Body with curved bevel -->
+    <rect x="10" y="18" width="44" height="40" rx="10" fill="url(#logo-grad)"/>
+    
+    <!-- Cutout details -->
+    <path d="M10 26C16 29 24 30 32 30C40 30 48 29 54 26" stroke="#4ADE80" stroke-width="1.5" stroke-opacity="0.4"/>
+    
+    <!-- Central Icon: Pantry Clock / Freshness Timer & Checkmark -->
+    <circle cx="32" cy="38" r="11" fill="#FFFFFF" fill-opacity="0.18"/>
+    <circle cx="32" cy="38" r="9.5" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="45 5"/>
+    
+    <!-- Checkmark inside indicating pantry in order -->
+    <path d="M27.5 38L30.5 41L36.5 34.5" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Small Leaf Accent atop the bag -->
+    <path d="M38 12C38 12 43 10 44 6C40 6 38 10 38 12Z" fill="#86EFAC"/>
+  </g>
+</svg>

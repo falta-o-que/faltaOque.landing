@@ -1,0 +1,214 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.ctaSection {
+  @include section-padding;
+  background: #ffffff;
+  position: relative;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaCard {
+  width: 100%;
+  max-width: 1050px;
+  background: linear-gradient(135deg, #0f172a 0%, #14532d 100%);
+  border-radius: $radius-xl;
+  padding: 4.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include mobile {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+.bgGlow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3) 0%, rgba(34, 197, 94, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.ctaBadge {
+  @include badge-pill;
+  background: rgba(255, 255, 255, 0.15);
+  color: #86efac;
+  border: 1px solid rgba(134, 239, 172, 0.3);
+}
+
+.ctaTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  max-width: 720px;
+
+  @include mobile {
+    font-size: 1.95rem;
+  }
+}
+
+.ctaSubtitle {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: 0.9375rem;
+  }
+}
+
+.ctaForm {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem;
+  border-radius: $radius-full;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 0.5rem;
+
+  @include mobile {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.emailInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #ffffff;
+  outline: none;
+  font-family: inherit;
+
+  &::placeholder {
+    color: #94a3b8;
+  }
+
+  @include mobile {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: $radius-full;
+  }
+}
+
+.submitBtn {
+  @include button-primary;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.successBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(22, 163, 74, 0.25);
+  border: 1px solid #4ade80;
+  border-radius: $radius-md;
+  padding: 1.25rem 1.75rem;
+  max-width: 560px;
+  text-align: left;
+  color: #ffffff;
+
+  strong {
+    font-size: 1rem;
+    display: block;
+    color: #86efac;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    margin-top: 0.25rem;
+  }
+}
+
+.downloadRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.35rem;
+  border-radius: $radius-md;
+  color: #ffffff;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.btnText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  small {
+    font-size: 0.6875rem;
+    color: #94a3b8;
+    line-height: 1;
+  }
+
+  strong {
+    font-size: 0.875rem;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+}
+
+.securityNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 1rem;
+}

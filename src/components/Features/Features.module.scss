@@ -1,0 +1,229 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.featuresSection {
+  @include section-padding;
+  background: $bg-subtle;
+  position: relative;
+}
+
+.featuresContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 720px;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionPill {
+  @include badge-pill;
+  background: $primary-soft;
+  color: $primary-dark;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $navy;
+  line-height: 1.18;
+
+  @include mobile {
+    font-size: 1.85rem;
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.0625rem;
+  color: $text-secondary;
+  line-height: 1.6;
+}
+
+.tabsFilter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  background: #ffffff;
+  padding: 0.4rem;
+  border-radius: $radius-full;
+  border: 1px solid $border-default;
+  box-shadow: $shadow-xs;
+}
+
+.filterBtn {
+  border: none;
+  background: transparent;
+  color: $text-secondary;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.15rem;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $navy;
+    background: $bg-subtle;
+  }
+
+  &.active {
+    background: $primary;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  background: #ffffff;
+  border-radius: $radius-md;
+  border: 1px solid $border-default;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all $transition-smooth;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-lg;
+    border-color: $border-medium;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.green {
+    background: $primary-soft;
+    color: $primary;
+  }
+
+  &.blue {
+    background: $status-info-bg;
+    color: $status-info;
+  }
+
+  &.amber {
+    background: $status-warning-bg;
+    color: $status-warning;
+  }
+
+  &.purple {
+    background: #f3e8ff;
+    color: #7e22ce;
+  }
+}
+
+.badge {
+  @include badge-pill;
+  font-size: 0.75rem;
+}
+
+.badge_green {
+  background: $primary-soft;
+  color: $primary-dark;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.badge_blue {
+  background: $status-info-bg;
+  color: $status-info;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.badge_amber {
+  background: $status-warning-bg;
+  color: $status-warning;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.badge_purple {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border: 1px solid rgba(126, 34, 206, 0.2);
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-size: 0.9375rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cardHighlights {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid $border-light;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: $text-secondary;
+  line-height: 1.4;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: $primary-soft;
+  color: $primary;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

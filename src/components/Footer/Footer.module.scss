@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+
+.container {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.footer {
+  padding: 60px 0 25px;
+
+  .container:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+  }
+
+  p {
+    margin-top: 15px;
+    color: $muted;
+    font-size: .86rem;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: flex-start;
+  padding-top: 12px;
+  font-size: .84rem;
+  font-weight: 600;
+  color: $muted;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 55px;
+  padding-top: 20px;
+  border-top: 1px solid $line;
+  color: $footer-muted;
+  font-size: .75rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 36px, 1200px);
+  }
+  .footer .container:first-child {
+    flex-direction: column;
+  }
+  .footerLinks {
+    gap: 18px 25px;
+  }
+}
+
+.footerBottom {
+  margin-top: 38px;
+}
+
+.footerLinks a {
+  transition: color .2s ease;
+}
+
+@media (hover: hover) {
+  .footerLinks a:hover {
+    color: $navigation-hover;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footerLinks a {
+    transition: none;
+  }
+}

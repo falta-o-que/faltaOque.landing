@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: $ink;
+  font-family: $font-heading;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+
+  img {
+    width: 37px;
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+.brandQuestion {
+  color: inherit;
+}

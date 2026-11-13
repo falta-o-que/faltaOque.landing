@@ -1,0 +1,182 @@
+@use '../../styles/variables' as *;
+
+.container {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.kicker {
+  color: $section-accent;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.faq h2 {
+  color: $ink;
+  font-size: clamp(2.5rem, 4.2vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -.055em;
+}
+
+.faq {
+  padding: 110px 0;
+  border-top: 1px solid $line;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 90px;
+  }
+}
+
+.faqIntro {
+  h2 {
+    margin: 18px 0;
+  }
+
+  > p:last-child {
+    color: $muted;
+  }
+}
+
+.faqList {
+  border-top: 1px solid $line;
+
+  details {
+    border-bottom: 1px solid $line;
+  }
+
+  summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    color: $ink;
+    font-size: .98rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+      transition: transform .2s ease;
+    }
+  }
+
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  details p {
+    padding: 0 28px 24px 0;
+    color: $muted;
+    font-size: .9rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq .container {
+    gap: 45px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 36px, 1200px);
+  }
+  .faq {
+    padding: 80px 0;
+  }
+  .faq .container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqList summary svg {
+    transition: none;
+  }
+}
+
+.faq {
+  padding: 80px 0;
+}
+
+@media (max-width: 700px) {
+  .faq {
+    padding-block: 60px;
+  }
+  .faq .container {
+    gap: 24px;
+  }
+}
+
+.faq {
+  scroll-margin-top: 100px;
+}
+
+@keyframes answerAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faqList details[open] p {
+  animation: answerAppear .3s ease-out both;
+}
+
+.faq {
+  :global([data-reveal='pending']) {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  :global([data-reveal='visible']) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .65s ease, transform .65s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  :global([data-reveal='pending']:focus-within) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: hover) {
+  .faqList summary:hover {
+    color: $section-accent;
+  }
+}
+
+@media (max-width: 700px) {
+  .faq {
+    scroll-margin-top: 85px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqList details[open] p {
+    animation: none;
+    will-change: auto;
+  }
+  .faq {
+    :global([data-reveal='pending']), :global([data-reveal='visible']) {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

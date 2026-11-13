@@ -1,0 +1,104 @@
+@use '../../../styles/variables' as *;
+
+.feature {
+  min-height: 235px;
+  padding: 30px 36px 34px 0;
+  border-bottom: 1px solid $line;
+
+  &:not(:nth-child(3n + 1)) {
+    padding-left: 36px;
+    border-left: 1px solid $line;
+  }
+
+  h3 {
+    max-width: 270px;
+    margin: 24px 0 10px;
+    color: $ink;
+    font-size: 1.12rem;
+    letter-spacing: -.025em;
+  }
+
+  p {
+    max-width: 300px;
+    color: $muted;
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+}
+
+.featureTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featureIcon {
+  color: $feature-accent;
+}
+
+@media (max-width: 700px) {
+  .feature {
+    min-height: 220px;
+    padding: 24px 20px 26px 0;
+
+    &:not(:nth-child(3n + 1)) {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-left: 20px;
+      border-left: 1px solid $line;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .feature, .feature:nth-child(even) {
+    min-height: auto;
+    padding: 26px 0;
+    border-left: 0;
+  }
+}
+
+.feature {
+  min-height: 200px;
+  padding-top: 24px;
+  padding-bottom: 26px;
+}
+
+.feature h3 {
+  margin-top: 18px;
+}
+
+.featureIcon {
+  display: inline-flex;
+  transition: transform .25s ease;
+}
+
+@media (hover: hover) {
+  .feature:hover .featureIcon {
+    transform: translateY(-4px) scale(1.1);
+  }
+}
+
+@media (max-width: 700px) {
+  .feature {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 400px) {
+  .feature {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featureIcon {
+    transition: none;
+  }
+  .feature:hover .featureIcon {
+    transform: none;
+  }
+}

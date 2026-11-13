@@ -1,0 +1,114 @@
+@use '../../styles/variables' as *;
+
+.container {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.cta h2 {
+  color: $ink;
+  font-size: clamp(2.5rem, 4.2vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -.055em;
+}
+
+.cta {
+  background: $deep-green;
+  color: $paper;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-block: 70px;
+  }
+
+  p {
+    margin-bottom: 17px;
+    color: $cta-muted;
+    font-size: .88rem;
+  }
+
+  h2 {
+    color: $paper;
+    max-width: 16ch;
+
+    span {
+      display: block;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 55%;
+    bottom: -75px;
+    opacity: .13;
+    transform: rotate(15deg);
+    pointer-events: none;
+  }
+}
+
+.ctaAction {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  span {
+    color: $cta-muted;
+    font-size: .76rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 36px, 1200px);
+  }
+  .cta .container {
+    min-height: 0;
+    display: block;
+  }
+  .ctaAction {
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+  .cta img {
+    left: auto;
+    right: -30px;
+    bottom: -40px;
+  }
+}
+
+.cta {
+  :global([data-reveal='pending']) {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  :global([data-reveal='visible']) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .65s ease, transform .65s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  :global([data-reveal='pending']:focus-within) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    :global([data-reveal='pending']), :global([data-reveal='visible']) {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

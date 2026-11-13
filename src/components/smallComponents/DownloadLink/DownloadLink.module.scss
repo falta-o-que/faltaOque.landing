@@ -1,0 +1,61 @@
+@use '../../../styles/variables' as *;
+
+.button {
+  min-height: 56px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  padding: 15px 23px;
+  border-radius: 10px;
+  font-size: .92rem;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.buttonDark {
+  background: $ink;
+  color: $paper;
+
+  &:hover {
+    background: $deep-green;
+  }
+}
+
+.buttonLight {
+  background: $paper;
+  color: $ink;
+
+  &:hover {
+    background: $button-hover-light;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  .button:hover {
+    transform: none;
+  }
+}
+
+.button svg {
+  transition: transform .25s ease;
+}
+
+@media (hover: hover) {
+  .button:hover svg {
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button svg {
+    transition: none;
+  }
+}

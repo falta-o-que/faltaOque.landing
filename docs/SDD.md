@@ -31,7 +31,7 @@ O público principal são pessoas que desejam organizar a despensa e as compras 
 
 ### 4.2 Composição da página
 
-`src/app/page.tsx` renderiza a landing com cabeçalho, apresentação, funcionalidades, explicação de funcionamento, informações sobre o projeto e equipe, FAQ, chamada para download e rodapé.
+`src/app/page.tsx` organiza os componentes de cabeçalho, apresentação, funcionalidades, explicação de funcionamento, informações sobre o projeto e equipe, FAQ, chamada para download e rodapé. Cada componente mantém seu SCSS junto ao TSX. Elementos reutilizados ficam em pastas próprias em `src/components/smallComponents/`; em `src/styles/` ficam apenas os estilos globais, as variáveis e o reset.
 
 ### 4.3 Integração e conteúdo
 

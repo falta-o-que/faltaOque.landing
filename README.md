@@ -19,8 +19,11 @@ src/
 ├── assets/
 │   ├── icons/              Um componente TSX por ícone e export.ts
 │   └── images/             Marca e ilustração otimizadas e export.ts
-├── components/LandingPage/ Componentes, navegação e animações
-└── styles/                 Variáveis de estilo compartilhadas
+├── components/             Seções com seus próprios arquivos TSX e SCSS
+│   └── smallComponents/    Componentes reutilizáveis, cada um em sua pasta
+├── constants/              Links usados em mais de um componente
+├── hooks/                  Comportamentos reutilizáveis
+└── styles/                 Estilos globais, variáveis e reset
 docs/SDD.md                 Decisões e requisitos da landing
 ```
 

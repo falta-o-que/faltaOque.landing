@@ -1,0 +1,395 @@
+@use '../../styles/variables' as *;
+
+.heroInner, .heroBottom {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.hero {
+  background: $hero-background;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 610px;
+  align-items: center;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+  padding: 76px 0 90px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: $deep-green;
+  font-size: .82rem;
+  font-weight: 700;
+
+  span {
+    width: 8px;
+    height: 8px;
+    background: $availability-dot;
+    border-radius: 50%;
+  }
+}
+
+.hero h1 {
+  margin: 27px 0 24px;
+  max-width: 660px;
+  color: $ink;
+  font-size: clamp(3.5rem, 5.5vw, 5.8rem);
+  line-height: 1.03;
+  font-weight: 700;
+  letter-spacing: -.065em;
+
+  em {
+    color: $heading-accent;
+    font-style: normal;
+  }
+}
+
+.heroCopy > p {
+  max-width: 465px;
+  color: $hero-text;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: $ink;
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.downloadNote {
+  display: block;
+  margin-top: 17px;
+  color: $download-muted;
+  font-size: .76rem;
+}
+
+.heroVisual {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroCircle {
+  position: absolute;
+  width: min(38vw, 480px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $hero-circle;
+}
+
+.groceries {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 540px);
+  height: auto;
+  filter: drop-shadow(0 24px 25px rgba(60, 92, 45, .14));
+}
+
+.visualCaption {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 70px;
+  max-width: 150px;
+  color: $deep-green;
+  font-size: .82rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.visualLabel {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 90px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-radius: 13px;
+  background: $paper;
+  box-shadow: 0 15px 35px rgba(25, 71, 30, .12);
+
+  strong, small {
+    display: block;
+  }
+
+  strong {
+    color: $ink;
+    font-size: .9rem;
+  }
+
+  small {
+    margin-top: 3px;
+    color: $muted;
+    font-size: .7rem;
+  }
+}
+
+.visualIcon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: $visual-icon-background;
+  color: $visual-icon-color;
+}
+
+.heroBottom {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid $hero-divider;
+  color: $hero-secondary;
+  font-size: .77rem;
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: $deep-green;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroInner, .heroBottom {
+    width: min(100% - 36px, 1200px);
+  }
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+  .heroCopy {
+    padding: 58px 0 10px;
+  }
+  .hero h1 {
+    font-size: clamp(3.3rem, 12vw, 4.8rem);
+  }
+  .heroCopy > p {
+    font-size: 1rem;
+  }
+  .heroVisual {
+    min-height: 370px;
+  }
+  .heroCircle {
+    width: min(74vw, 370px);
+  }
+  .groceries {
+    width: min(100%, 400px);
+  }
+  .visualCaption {
+    top: 30px;
+    right: 0;
+    font-size: .72rem;
+  }
+  .visualLabel {
+    bottom: 45px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroActions {
+    gap: 18px;
+  }
+}
+
+@keyframes enterContent {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes enterIllustration {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes enterHero {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.heroInner {
+  min-height: 550px;
+}
+
+.heroCopy {
+  padding-block: 56px 65px;
+  animation: enterHero .7s ease-out both;
+}
+
+.heroVisual {
+  min-height: 510px;
+}
+
+.groceries {
+  animation: enterIllustration .85s .12s ease-out both;
+}
+
+.visualLabel {
+  animation: enterContent .65s .35s ease-out both;
+}
+
+.textLink {
+  transition: color .2s ease;
+}
+
+.textLink svg, .heroBottom svg {
+  transition: transform .2s ease;
+}
+
+@media (hover: hover) {
+  .textLink:hover svg, .heroBottom a:hover svg {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 700px) {
+  .heroInner {
+    min-height: 0;
+  }
+  .heroCopy {
+    padding: 44px 0 0;
+  }
+  .heroVisual {
+    min-height: 330px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCopy, .groceries, .visualLabel {
+    animation: none;
+  }
+  .textLink, .textLink svg, .heroBottom svg {
+    transition: none;
+  }
+  .textLink:hover svg, .heroBottom a:hover svg {
+    transform: none;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+}
+
+@keyframes nudgeDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+.heroCircle {
+  animation: breathe 5.5s cubic-bezier(.45, 0, .55, 1) infinite;
+  will-change: transform;
+}
+
+.heroBottom a svg {
+  animation: nudgeDown 2.2s cubic-bezier(.45, 0, .55, 1) infinite;
+  will-change: transform;
+}
+
+.availability span {
+  box-shadow: 0 0 0 5px rgba(25, 181, 60, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCircle, .heroBottom a svg {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+.textLink {
+  min-height: 56px;
+  gap: 14px;
+  padding: 6px 7px 6px 20px;
+  border: 1px solid $deep-green;
+  border-radius: 10px;
+  color: $deep-green;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.textLinkIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 7px;
+  background: $visual-icon-background;
+  transition: background .25s ease;
+}
+
+@media (hover: hover) {
+  .textLink:hover {
+    background: $paper;
+    transform: translateY(-2px);
+  }
+  .textLink:hover .textLinkIcon {
+    background: $hero-circle;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .textLink, .textLinkIcon {
+    transition: none;
+  }
+  .textLink:hover {
+    transform: none;
+  }
+}

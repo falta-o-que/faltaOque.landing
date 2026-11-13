@@ -1,0 +1,16 @@
+@use '../../../styles/variables' as *;
+
+.skipLink {
+  position: fixed;
+  z-index: 100;
+  top: 8px;
+  left: 8px;
+  padding: 12px;
+  background: $paper;
+  color: $ink;
+  transform: translateY(-150%);
+
+  &:focus {
+    transform: none;
+  }
+}

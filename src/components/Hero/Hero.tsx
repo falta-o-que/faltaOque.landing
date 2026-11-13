@@ -23,7 +23,6 @@ export function Hero() {
                 </div>
                 <div className={styles.heroVisual}>
                     <div className={styles.heroCircle}/>
-                    <span className={styles.visualCaption}>Um jeito mais simples de cuidar da casa.</span>
                     <img className={styles.groceries} src={groceries.src} alt="" width={1024} height={1024}
                          fetchPriority="high"/>
                     <div className={styles.visualLabel}>

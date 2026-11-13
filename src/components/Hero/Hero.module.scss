@@ -109,18 +109,6 @@
   filter: drop-shadow(0 24px 25px rgba(60, 92, 45, .14));
 }
 
-.visualCaption {
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  top: 70px;
-  max-width: 150px;
-  color: $deep-green;
-  font-size: .82rem;
-  line-height: 1.5;
-  font-weight: 700;
-}
-
 .visualLabel {
   position: absolute;
   z-index: 3;
@@ -208,11 +196,6 @@
   }
   .groceries {
     width: min(100%, 400px);
-  }
-  .visualCaption {
-    top: 30px;
-    right: 0;
-    font-size: .72rem;
   }
   .visualLabel {
     bottom: 45px;

@@ -13,6 +13,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+:focus-visible {
+  outline: 3px solid $primary-dark;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
   font-family: $font-family;
   color: $text-primary;

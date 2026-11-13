@@ -17,12 +17,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#16a34a',
+  themeColor: '#00dd00',
 };
 
 export const metadata: Metadata = {
   title: 'FaltaOquê? • Controle Inteligente de Despensa e Listas de Compras',
-  description: 'Gerencie produtos da sua despensa, acompanhe datas de validade, gere listas de compras automáticas e economize tempo e dinheiro com leitura de notas fiscais.',
+  description: 'Organize a despensa, acompanhe produtos e planeje as compras da casa com o FaltaOquê?.',
   keywords: [
     'despensa inteligente',
     'lista de compras',
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Miguel Silva & Equipe FaltaOquê' }],
   icons: {
-    icon: '/icons/logo.svg',
-    shortcut: '/icons/logo.svg',
-    apple: '/icons/logo.svg',
+    icon: '/brand/logo.png',
+    shortcut: '/brand/logo.png',
+    apple: '/brand/logo.png',
   },
   openGraph: {
     title: 'FaltaOquê? • O App Inteligente para sua Despensa',
-    description: 'Nunca mais compre o que já tem. Nunca mais esqueça o que acabou. Controle sua despensa, economize dinheiro e reduza o desperdício.',
+    description: 'Organize a despensa, acompanhe produtos e planeje as compras da casa.',
     siteName: 'FaltaOquê?',
     locale: 'pt_BR',
     type: 'website',
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plusJakarta.variable}`}>
       <head>
-        <link rel="icon" href="/icons/logo.svg" type="image/svg+xml" />
+        <link rel="icon" href="/brand/logo.png" type="image/png" />
       </head>
       <body>{children}</body>
     </html>

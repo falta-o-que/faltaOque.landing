@@ -1,120 +1,41 @@
-// Brand Colors
-$primary: #16a34a;
-$primary-light: #22c55e;
 $primary-dark: #15803d;
 $primary-darker: #14532d;
-$primary-soft: #f0fdf4;
 $primary-tint: #dcfce7;
-$primary-glow: rgba(34, 197, 94, 0.25);
-$primary-glow-strong: rgba(22, 163, 74, 0.4);
-
-// Contrast & Dark Tones
 $navy: #0f172a;
-$navy-surface: #1e293b;
-$navy-border: #334155;
-$navy-light: #475569;
-
-// Functional / Semantic Colors (as seen in FaltaOquê app)
-$status-success: #16a34a;
-$status-success-bg: #dcfce7;
-$status-warning: #d97706;
-$status-warning-bg: #fef3c7;
-$status-danger: #dc2626;
-$status-danger-bg: #fee2e2;
-$status-info: #0284c7;
-$status-info-bg: #e0f2fe;
-
-// Pantry Palette Colors (for customized pantries)
-$pantry-emerald: #10b981;
-$pantry-blue: #3b82f6;
-$pantry-purple: #8b5cf6;
-$pantry-amber: #f59e0b;
-$pantry-rose: #f43f5e;
-$pantry-teal: #14b8a6;
-$pantry-indigo: #6366f1;
-
-// Backgrounds & Neutrals
 $bg-body: #ffffff;
 $bg-subtle: #f8fafc;
-$bg-card: #ffffff;
-$bg-card-hover: #fcfdfd;
-$bg-glass: rgba(255, 255, 255, 0.85);
-
-// Text colors
 $text-primary: #0f172a;
 $text-secondary: #334155;
-$text-muted: #64748b;
 $text-light: #94a3b8;
-$text-white: #ffffff;
-
-// Borders & Dividers
-$border-light: #f1f5f9;
-$border-default: #e2e8f0;
 $border-medium: #cbd5e1;
-$border-focus: #22c55e;
-
-// Radii
-$radius-xs: 6px;
-$radius-sm: 10px;
-$radius-md: 16px;
-$radius-lg: 24px;
-$radius-xl: 32px;
 $radius-full: 9999px;
-
-// Shadows
-$shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-$shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-$shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-$shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-$shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.18);
-$shadow-green: 0 12px 28px -6px rgba(22, 163, 74, 0.35);
-$shadow-mockup: 0 30px 60px -15px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.08);
-
-// Transitions
-$transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-$transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
-
-// Typography
 $font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $font-heading: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-// Breakpoints
-$bp-sm: 640px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xl: 1280px;
-
 $ink: #171d19;
 $muted: #59645c;
 $paper: #ffffff;
 $soft: #f4f7f2;
 $line: #dfe7dc;
-$green: #00dd00;
 $deep-green: #16482a;
-$brand-link: #09a925;
 $navigation-text: #465048;
 $navigation-hover: #168134;
 $hero-background: #eef8e9;
 $availability-dot: #19b53c;
 $heading-accent: #23843d;
 $hero-text: #526257;
-$download-muted: #68776b;
+$download-muted: #526257;
 $hero-circle: #c9f2ba;
 $visual-icon-background: #dff8d7;
 $visual-icon-color: #18833a;
-$visual-index: #718774;
 $hero-divider: #d1e7ca;
-$hero-secondary: #657b69;
+$hero-secondary: #526257;
 $section-accent: #287343;
 $section-heading-accent: #298344;
 $feature-accent: #27823d;
-$feature-number: #bdcbbd;
-$footnote-text: #778579;
-$step-number: #8da18f;
+$footnote-text: #59645c;
+$step-number: #59645c;
 $about-background: #eaf8e5;
 $about-link: #1f7139;
-$tech-label: #839086;
 $cta-muted: #b7d8b9;
-$footer-muted: #849087;
+$footer-muted: #59645c;
 $button-hover-light: #e6f9e3;

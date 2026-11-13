@@ -1,6 +1,4 @@
 @use '../styles/variables' as *;
-@use '../styles/mixins' as *;
-@use '../styles/animations' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -81,8 +79,4 @@ img {
   &:hover {
     background: $text-light;
   }
-}
-
-.container {
-  @include container;
 }

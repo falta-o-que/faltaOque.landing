@@ -1,17 +1,21 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { favicon } from '@/assets/images/export';
 import './globals.scss';
+
+const siteTitle = 'FaltaOquê? | Despensa e lista de compras';
+const siteDescription = 'Organize sua despensa, crie listas de compras, acompanhe gastos e leia notas fiscais por QR Code com o aplicativo FaltaOquê?.';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
+  display: 'optional',
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-jakarta',
-  display: 'swap',
+  display: 'optional',
 });
 
 export const viewport: Viewport = {
@@ -21,30 +25,32 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'FaltaOquê? • Controle Inteligente de Despensa e Listas de Compras',
-  description: 'Organize a despensa, acompanhe produtos e planeje as compras da casa com o FaltaOquê?.',
+  title: siteTitle,
+  description: siteDescription,
+  applicationName: 'FaltaOquê?',
   keywords: [
-    'despensa inteligente',
+    'controle de despensa',
     'lista de compras',
     'controle de validade',
-    'scanner nota fiscal',
-    'economia supermercado',
-    'TCC Senai',
-    'FaltaOquê',
+    'leitura de nota fiscal por QR Code',
+    'gastos de supermercado',
+    'FaltaOquê?',
   ],
-  authors: [{ name: 'Miguel Silva & Equipe FaltaOquê' }],
+  authors: [{ name: 'Projeto FaltaOquê?' }],
+  robots: { index: true, follow: true },
   icons: {
-    icon: '/brand/logo.png',
-    shortcut: '/brand/logo.png',
-    apple: '/brand/logo.png',
+    icon: favicon.src,
+    shortcut: favicon.src,
+    apple: favicon.src,
   },
   openGraph: {
-    title: 'FaltaOquê? • O App Inteligente para sua Despensa',
-    description: 'Organize a despensa, acompanhe produtos e planeje as compras da casa.',
+    title: siteTitle,
+    description: siteDescription,
     siteName: 'FaltaOquê?',
     locale: 'pt_BR',
     type: 'website',
   },
+  twitter: { card: 'summary', title: siteTitle, description: siteDescription },
 };
 
 export default function RootLayout({
@@ -54,9 +60,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plusJakarta.variable}`}>
-      <head>
-        <link rel="icon" href="/brand/logo.png" type="image/png" />
-      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ArrowDownToLine } from 'lucide-react';
+import { ArrowDownToLine } from '@/assets/icons/export';
 import styles from './LandingPage.module.scss';
 
 type AnimatedHeaderProps = {
@@ -57,7 +57,7 @@ export function AnimatedHeader({ children, downloadUrl }: AnimatedHeaderProps) {
           <a href="#recursos" onClick={() => setMenuOpen(false)}>O aplicativo</a><a href="#como-funciona" onClick={() => setMenuOpen(false)}>Como funciona</a><a href="#projeto" onClick={() => setMenuOpen(false)}>O projeto</a><a href="#duvidas" onClick={() => setMenuOpen(false)}>Dúvidas</a>
         </nav>
         <div className={styles.headerActions}>
-          <a className={styles.headerDownload} href={downloadUrl} aria-label="Baixar aplicativo para Android"><span>Baixar app</span> <ArrowDownToLine size={16} aria-hidden="true" /></a>
+          <a className={styles.headerDownload} href={downloadUrl} aria-label="Baixar app para Android"><span>Baixar app</span> <ArrowDownToLine size={16} aria-hidden="true" /></a>
           <button ref={menuButton} type="button" className={styles.menuButton} aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen((open) => !open)}>
             <span className={styles.menuIcon} aria-hidden="true"><span /><span /><span /></span>
           </button>

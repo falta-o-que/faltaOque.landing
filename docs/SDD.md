@@ -10,7 +10,7 @@ Registrar a arquitetura e os requisitos da landing page do FaltaOquê? em um doc
 
 - **Este projeto:** `faltaOque.landing`, landing page em Next.js.
 - **Projeto referenciado:** `C:\Users\Miguelz\Documents\Codes\Senai\TCC\faltaoque.Mobile`. O app mobile é a referência funcional e visual do produto; seu código, documentação e assets podem ser consultados para conferir telas, marca e comportamento.
-- **Assets mobile úteis:** `faltaoque.Mobile/src/assets/branding/` (ícone, logo e foreground do ícone), `faltaoque.Mobile/src/assets/grocery/` (imagem de alimentos) e `faltaoque.Mobile/src/assets/icons/` (ícones React Native). As capturas já usadas pela landing estão em `public/screens/`.
+- **Assets mobile úteis:** `faltaoque.Mobile/src/assets/branding/` (ícone, logo e foreground do ícone), `faltaoque.Mobile/src/assets/grocery/` (imagem de alimentos) e `faltaoque.Mobile/src/assets/icons/` (ícones React Native). Os recursos usados pela landing ficam em `src/assets/`; capturas atuais do app ainda precisam ser preparadas para a galeria.
 - **Fontes consultadas no mobile:** `README.md`, `docs/project/overview.md`, `docs/project/decisions.md`, `docs/project/current-state.md` e `docs/architecture/mobile.md`. Esses documentos descrevem o app mobile; não definem automaticamente os requisitos da landing.
 - **Catálogo de referência de design:** [UI Skills](https://www.ui-skills.com/), de onde foi escolhida a skill `frontend-design`.
 
@@ -25,17 +25,17 @@ O público principal são pessoas que desejam organizar a despensa e as compras 
 ### 4.1 Stack e entrega
 
 - Next.js 15 com App Router, React 19 e TypeScript.
-- Sass/SCSS Modules para estilos e `lucide-react` para ícones.
+- Sass/SCSS Modules para estilos e ícones como componentes TSX em `src/assets/icons/`.
 - Configuração `output: 'export'`, com imagens não otimizadas para permitir exportação estática.
 - Fontes declaradas: Inter e Plus Jakarta Sans.
 
 ### 4.2 Composição da página
 
-`src/app/page.tsx` compõe, nesta ordem: cabeçalho, hero, estatísticas, funcionalidades, simulador de despensa, calculadora de preços, galeria de telas, explicação de funcionamento, comparação, depoimentos, FAQ, chamada para ação e rodapé.
+`src/app/page.tsx` renderiza a landing com cabeçalho, apresentação, funcionalidades, explicação de funcionamento, informações sobre o projeto e equipe, FAQ, chamada para download e rodapé.
 
 ### 4.3 Integração e conteúdo
 
-- A landing já contém imagens de telas do aplicativo em `public/screens/`.
+- A landing usa a marca e a ilustração de compras do aplicativo; a galeria de capturas reais continua pendente.
 - O app mobile usa React Native e Expo; sua arquitetura organiza interface, serviços, domínio e repositórios. A landing é um frontend separado e não compartilha componentes React Native.
 - Afirmações de impacto, economia, avaliações, disponibilidade, links de download e funcionalidades apresentadas na landing precisam ser confirmadas antes de serem tratadas como fatos do produto.
 
@@ -66,7 +66,7 @@ Podem ser usados relatos breves e anônimos, fiéis às respostas recebidas. O f
 
 ### Arquitetura e código
 
-- Manter Next.js 15, React 19, TypeScript, Sass com SCSS Modules e exportação estática. Preservar a organização geral atual de `src/app`, `src/components`, `src/styles` e `public`, adaptando-a à reformulação.
+- Manter Next.js 15, React 19, TypeScript, Sass com SCSS Modules e exportação estática. Organizar a aplicação em `src/app`, `src/components`, `src/styles` e `src/assets`, com imagens em `src/assets/images` e ícones TSX em `src/assets/icons`.
 - Centralizar cores e outros valores compartilhados em variáveis, componentizar e reutilizar componentes quando fizer sentido, sem criar abstrações artificiais para pequenas repetições. Componentes React Native não são diretamente reutilizáveis na web.
 - Nomear novos identificadores em inglês, de forma clara e consistente com as convenções do projeto. Booleanos devem expressar a condição; evitar abreviações e prefixos redundantes, inclusive `is` e `has` quando não acrescentarem significado.
 - Não renomear automaticamente identificadores existentes em português; fazê-lo apenas quando necessário e com aprovação, preservando a compatibilidade.

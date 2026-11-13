@@ -38,7 +38,6 @@
 .feature { min-height: 235px; padding: 30px 36px 34px 0; border-bottom: 1px solid $line; &:not(:nth-child(3n + 1)) { padding-left: 36px; border-left: 1px solid $line; } h3 { max-width: 270px; margin: 24px 0 10px; color: $ink; font-size: 1.12rem; letter-spacing: -.025em; } p { max-width: 300px; color: $muted; font-size: .9rem; line-height: 1.7; } }
 .featureTop { display: flex; align-items: center; justify-content: space-between; }
 .featureIcon { color: $feature-accent; }
-.featureNumber { color: $feature-number; font-size: .74rem; }
 .featureFootnote { margin-top: 22px; color: $footnote-text; font-size: .76rem; }
 .how { padding: 112px 0 120px; background: $soft; }
 .howHeading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; h2 { margin-top: 20px; } > p { max-width: 250px; color: $muted; line-height: 1.7; } }
@@ -47,7 +46,6 @@
 .aboutMark { width: 180px; height: 180px; display: grid; place-items: center; background: $about-background; border-radius: 38px; transform: rotate(-5deg); img { object-fit: contain; } }
 .aboutContent { h2 { margin: 18px 0 22px; font-size: clamp(2.3rem, 3.7vw, 3.7rem); } > p:not(.kicker) { max-width: 500px; color: $muted; line-height: 1.75; } }
 .aboutLink { display: inline-flex; align-items: center; gap: 7px; margin-top: 24px; color: $about-link; font-weight: 700; font-size: .9rem; }
-.tech { align-self: flex-end; padding-left: 24px; border-left: 1px solid $line; span { display: block; margin-bottom: 10px; color: $tech-label; font-size: .76rem; } p { color: $muted; font-size: .85rem; line-height: 1.8; } }
 .faq { padding: 110px 0; border-top: 1px solid $line; .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px; } }
 .faqIntro { h2 { margin: 18px 0; } > p:last-child { color: $muted; } }
 .faqList { border-top: 1px solid $line; details { border-bottom: 1px solid $line; } summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; color: $ink; font-size: .98rem; font-weight: 700; cursor: pointer; &::-webkit-details-marker { display: none; } svg { flex-shrink: 0; transition: transform .2s ease; } } details[open] summary svg { transform: rotate(180deg); } details p { padding: 0 28px 24px 0; color: $muted; font-size: .9rem; line-height: 1.75; } }
@@ -56,8 +54,8 @@
 .footer { padding: 60px 0 25px; .container:first-child { display: flex; justify-content: space-between; gap: 35px; } p { margin-top: 15px; color: $muted; font-size: .86rem; } }
 .footerLinks { display: flex; flex-wrap: wrap; gap: 25px; align-items: flex-start; padding-top: 12px; font-size: .84rem; font-weight: 600; color: $muted; a { display: inline-flex; align-items: center; gap: 7px; } }
 .footerBottom { display: flex; justify-content: space-between; gap: 15px; margin-top: 55px; padding-top: 20px; border-top: 1px solid $line; color: $footer-muted; font-size: .75rem; }
-@media (max-width: 900px) { .navigation { gap: 18px; } .heroInner { grid-template-columns: 1fr 1fr; } .sectionIntro { grid-template-columns: 1fr 1.5fr; > p:last-child { grid-column: 2; } } .about .container { grid-template-columns: 150px 1fr; gap: 35px; } .aboutMark { width: 140px; height: 140px; } .tech { grid-column: 2; } .faq .container { gap: 45px; } }
-@media (max-width: 700px) { .container, .headerInner, .heroInner, .heroBottom { width: min(100% - 36px, 1200px); } .headerInner { min-height: 76px; } .navigation { display: none; } .headerDownload { padding: 10px 13px; font-size: .76rem; } .heroInner { grid-template-columns: 1fr; } .heroCopy { padding: 58px 0 10px; } .hero h1 { font-size: clamp(3.3rem, 12vw, 4.8rem); } .heroCopy > p { font-size: 1rem; } .heroVisual { min-height: 370px; } .heroCircle { width: min(74vw, 370px); } .groceries { width: min(100%, 400px); } .visualCaption { top: 30px; right: 0; font-size: .72rem; } .visualLabel { bottom: 45px; padding: 12px; } .visualIndex { bottom: 32px; } .intro, .how, .about, .faq { padding: 80px 0; } .sectionIntro { display: block; margin-bottom: 45px; h2 { margin: 18px 0; } } .featureGrid { grid-template-columns: 1fr 1fr; } .feature { min-height: 220px; padding: 24px 20px 26px 0; &:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; } &:nth-child(even) { padding-left: 20px; border-left: 1px solid $line; } } .howHeading { display: block; > p { margin-top: 20px; } } .steps { grid-template-columns: 1fr; margin-top: 35px; article { min-height: 190px; } article > span { margin-bottom: 20px; } } .about .container { grid-template-columns: 1fr; gap: 28px; } .aboutMark { width: 110px; height: 110px; img { width: 70px; height: auto; } } .tech { grid-column: auto; } .faq .container { grid-template-columns: 1fr; gap: 35px; } .cta .container { min-height: 0; display: block; } .ctaAction { align-items: flex-start; margin-top: 30px; } .cta img { left: auto; right: -30px; bottom: -40px; } .footer .container:first-child { flex-direction: column; } .footerLinks { gap: 18px 25px; } }
+@media (max-width: 900px) { .navigation { gap: 18px; } .heroInner { grid-template-columns: 1fr 1fr; } .sectionIntro { grid-template-columns: 1fr 1.5fr; > p:last-child { grid-column: 2; } } .about .container { grid-template-columns: 150px 1fr; gap: 35px; } .aboutMark { width: 140px; height: 140px; } .faq .container { gap: 45px; } }
+@media (max-width: 700px) { .container, .headerInner, .heroInner, .heroBottom { width: min(100% - 36px, 1200px); } .headerInner { min-height: 76px; } .navigation { display: none; } .headerDownload { padding: 10px 13px; font-size: .76rem; } .heroInner { grid-template-columns: 1fr; } .heroCopy { padding: 58px 0 10px; } .hero h1 { font-size: clamp(3.3rem, 12vw, 4.8rem); } .heroCopy > p { font-size: 1rem; } .heroVisual { min-height: 370px; } .heroCircle { width: min(74vw, 370px); } .groceries { width: min(100%, 400px); } .visualCaption { top: 30px; right: 0; font-size: .72rem; } .visualLabel { bottom: 45px; padding: 12px; } .intro, .how, .about, .faq { padding: 80px 0; } .sectionIntro { display: block; margin-bottom: 45px; h2 { margin: 18px 0; } } .featureGrid { grid-template-columns: 1fr 1fr; } .feature { min-height: 220px; padding: 24px 20px 26px 0; &:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; } &:nth-child(even) { padding-left: 20px; border-left: 1px solid $line; } } .howHeading { display: block; > p { margin-top: 20px; } } .steps { grid-template-columns: 1fr; margin-top: 35px; article { min-height: 190px; } article > span { margin-bottom: 20px; } } .about .container { grid-template-columns: 1fr; gap: 28px; } .aboutMark { width: 110px; height: 110px; img { width: 70px; height: auto; } } .faq .container { grid-template-columns: 1fr; gap: 35px; } .cta .container { min-height: 0; display: block; } .ctaAction { align-items: flex-start; margin-top: 30px; } .cta img { left: auto; right: -30px; bottom: -40px; } .footer .container:first-child { flex-direction: column; } .footerLinks { gap: 18px 25px; } }
 @media (max-width: 400px) { .featureGrid { grid-template-columns: 1fr; } .feature, .feature:nth-child(even) { min-height: auto; padding: 26px 0; border-left: 0; } .heroActions { gap: 18px; } }
 @media (prefers-reduced-motion: reduce) { .button, .faqList summary svg { transition: none; } .button:hover { transform: none; } }
 
@@ -71,8 +69,13 @@
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+@keyframes enterHero {
+  from { transform: translateY(12px); }
+  to { transform: translateY(0); }
+}
+
 .heroInner { min-height: 550px; }
-.heroCopy { padding-block: 56px 65px; animation: enterContent .7s ease-out both; }
+.heroCopy { padding-block: 56px 65px; animation: enterHero .7s ease-out both; }
 .heroVisual { min-height: 510px; }
 .groceries { animation: enterIllustration .85s .12s ease-out both; }
 .visualLabel { animation: enterContent .65s .35s ease-out both; }
@@ -377,4 +380,3 @@
   .steps article:last-child h3 { margin: 0 0 6px; align-self: end; }
   .steps article:last-child p { max-width: none; align-self: start; }
 }
-

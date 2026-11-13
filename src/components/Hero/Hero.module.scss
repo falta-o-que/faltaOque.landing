@@ -48,6 +48,19 @@
   font-weight: 700;
   letter-spacing: -.065em;
 
+}
+
+.heroBrand {
+  display: block;
+  margin-bottom: .55em;
+  color: $deep-green;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  letter-spacing: -.04em;
+}
+
+.heroHeadline {
+  display: block;
+
   em {
     color: $heading-accent;
     font-style: normal;

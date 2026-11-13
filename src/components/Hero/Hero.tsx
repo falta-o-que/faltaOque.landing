@@ -9,9 +9,8 @@ export function Hero() {
             <div className={styles.heroInner}>
                 <div className={styles.heroCopy}>
                     <span className={styles.availability}><span/> Sua casa abastecida na hora certa.</span>
-                    <h1>Sua casa organizada começa <em>na despensa.</em></h1>
-                    <p>Controle sua despensa, planeje sua lista de compras e acompanhe seus gastos. Tudo em um só
-                        lugar.</p>
+                    <h1><span className={styles.heroBrand}>FaltaOquê?</span>{' '}<span className={styles.heroHeadline}>Sua casa organizada começa <em>na despensa.</em></span></h1>
+                    <p>Saiba o que você tem, planeje o que falta e acompanhe suas compras. Tudo em um só lugar.</p>
                     <div className={styles.heroActions}>
                         <DownloadLink/>
                         <a className={styles.textLink} href="#recursos">

@@ -19,7 +19,7 @@ export function About() {
                 <div className={styles.aboutMark} data-reveal><Image src={logo} alt="" width={104} height={114}/></div>
                 <div className={styles.aboutContent} data-reveal>
                     <p className={styles.kicker}>Prazer, FaltaOquê?</p>
-                    <h2>Uma ideia para facilitar a vida de todo dia.</h2>
+                    <h2>Uma ideia para facilitar a vida do dia a dia.</h2>
                     <p>O FaltaOquê? nasceu da vontade de tornar mais simples o cuidado com a casa: saber o que tem na
                         despensa, planejar as compras e entender melhor os gastos.</p>
                     <p>Em um só aplicativo, reunimos despensa, listas de compras, leitura de QR Code de nota fiscal,

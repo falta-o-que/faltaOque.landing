@@ -12,7 +12,7 @@ const questions = [
     },
     {
         question: 'Como funciona a leitura da nota fiscal?',
-        answer: 'O aplicativo lê o QR Code de uma NFC-e compatível de São Paulo. Antes de adicionar os itens à despensa, você pode revisar e corrigir as informações identificadas.'
+        answer: 'O aplicativo lê o QR Code de uma nota fiscal e faz a leitura dela eletronicamente. Antes de adicionar os itens à despensa, você pode revisar e corrigir as informações identificadas.'
     },
     {
         question: 'De onde vêm os preços das sugestões?',

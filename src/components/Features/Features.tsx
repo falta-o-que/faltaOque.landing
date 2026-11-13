@@ -16,7 +16,7 @@ const features = [
     {
         icon: QrCode,
         title: 'A nota fiscal ajuda no cadastro',
-        description: 'Leia o QR Code de uma NFC-e compatível de São Paulo e revise os produtos antes de adicioná-los.'
+        description: 'Leia o QR Code de uma nota fiscal e revise os produtos antes de adicioná-los.'
     },
     {
         icon: BarChart3,

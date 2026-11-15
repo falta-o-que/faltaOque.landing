@@ -5,10 +5,10 @@ import {repositoryUrl} from '@/constants/links';
 import styles from './About.module.scss';
 
 const teamMembers = [
-    {name: 'Manuela Vitória Barbosa de Andrade', url: 'https://github.com/Manuela0894'},
-    {name: 'Miguel Zacharias da Silva', url: 'https://github.com/miguelzack'},
+    {name: 'Manuela Vitória Barbosa de Andrade', url: 'https://www.linkedin.com/in/manuela-barbosa-andrade4/'},
+    {name: 'Miguel Zacharias da Silva', url: 'https://www.linkedin.com/in/miguel-zacharias-da-silva-8074b7323/'},
     {name: 'Nikollas Oliveira Andrade dos Santos', url: 'https://github.com/nikidsy'},
-    {name: 'Sarah Santos de Jesus', url: 'https://github.com/sarahsj-dot'},
+    {name: 'Sarah Santos de Jesus', url: 'https://www.linkedin.com/in/sarah-santos-a1b45128a/'},
     {name: 'Thiago Soares Coelho da Costa', url: 'https://github.com/th-cs'},
 ];
 

@@ -1,6 +1,6 @@
 import type {Metadata, Viewport} from 'next';
 import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
-import {favicon} from '@/assets/images/export';
+import favicon from '@/assets/images/favicon.png';
 import '@/styles/global.scss';
 
 const siteTitle = 'FaltaOquê? | Despensa e lista de compras';
@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
-    themeColor: '#00dd00',
+    themeColor: '#168a62',
 };
 
 export const metadata: Metadata = {
@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     robots: {index: true, follow: true},
     icons: {
         icon: favicon.src,
-        shortcut: favicon.src,
         apple: favicon.src,
     },
     openGraph: {

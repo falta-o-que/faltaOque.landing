@@ -1,5 +1,6 @@
 import type {Metadata, Viewport} from 'next';
 import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
+import {Analytics} from '@vercel/analytics/next';
 import favicon from '@/assets/images/favicon.png';
 import '@/styles/global.scss';
 
@@ -59,7 +60,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-BR" className={`${inter.variable} ${plusJakarta.variable}`}>
-        <body>{children}</body>
+        <body>
+            {children}
+            <Analytics />
+        </body>
         </html>
     );
 }
